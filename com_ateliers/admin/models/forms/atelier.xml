@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <!-- Champ caché pour l'ID -->
+        <field
+            name="id"
+            type="hidden"
+        />
+
+        <!-- Champ pour le titre -->
+ <field
+    name="titre"
+    type="text"
+    label="COM_ATELIERS_FIELD_TITRE_LABEL"
+    description="COM_ATELIERS_FIELD_TITRE_DESC"
+    size="40"
+    required="true"
+/>
+
+
+        <!-- Champ pour la description -->
+        <field
+            name="description"
+            type="editor"
+            label="COM_ATELIERS_FIELD_DESCRIPTION_LABEL"
+            description="COM_ATELIERS_FIELD_DESCRIPTION_DESC"
+            filter="JComponentHelper::filterText"
+            buttons="true"
+        />
+
+        <!-- Champ pour la date -->
+        <field
+            name="date"
+            type="calendar"
+            label="COM_ATELIERS_FIELD_DATE_LABEL"
+            description="COM_ATELIERS_FIELD_DATE_DESC"
+            required="true"
+            format="%Y-%m-%d %H:%M:%S"
+        />
+
+        <!-- Champ pour le nombre de places totales -->
+        <field
+            name="places_totales"
+            type="number"
+            label="COM_ATELIERS_FIELD_PLACES_TOTALES_LABEL"
+            description="COM_ATELIERS_FIELD_PLACES_TOTALES_DESC"
+            default="10"
+            min="1"
+            required="true"
+        />
+
+        <!-- Champ pour les places réservées -->
+        <field
+            name="places_reservees"
+            type="number"
+            label="COM_ATELIERS_FIELD_PLACES_RESERVEES_LABEL"
+            description="COM_ATELIERS_FIELD_PLACES_RESERVEES_DESC"
+            default="0"
+            min="0"
+        />
+
+        <!-- Champ pour le prix -->
+        <field
+            name="prix"
+            type="number"
+            label="COM_ATELIERS_FIELD_PRIX_LABEL"
+            description="COM_ATELIERS_FIELD_PRIX_DESC"
+            required="true"
+            min="0"
+            step="0.01"
+        />
+
+        <!-- Champ pour la date de création (lecture seule) -->
+        <field
+            name="created"
+            type="calendar"
+            label="COM_ATELIERS_FIELD_CREATED_LABEL"
+            description="COM_ATELIERS_FIELD_CREATED_DESC"
+            readonly="true"
+            format="%Y-%m-%d %H:%M:%S"
+        />
+
+        <!-- Champ pour le statut de publication -->
+        <field
+            name="published"
+            type="list"
+            label="JSTATUS"
+            description="JFIELD_PUBLISHED_DESC"
+            class="chzn-color-state"
+            default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+    </fieldset>
+</form>

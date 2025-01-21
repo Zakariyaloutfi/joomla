@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.9" method="upgrade">
+    <name>com_ateliers</name>
+    <author>Lynci</author>
+    <creationDate>2025-01-20</creationDate>
+    <version>1.0.0</version>
+    <description>COM_ATELIERS_XML_DESCRIPTION</description>
+
+    <!-- Installation -->
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <!-- Désinstallation -->
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <!-- Menu principal -->
+    <menu>Ateliers</menu>
+
+    <!-- Déclaration des fichiers frontend -->
+    <files folder="site">
+        <filename>ateliers.php</filename>
+        <filename>controller.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+    </files>
+
+    <!-- Déclaration des fichiers backend -->
+    <administration>
+        <menu>COM_ATELIERS</menu>
+        <files folder="admin">
+            <filename>ateliers.php</filename>
+            <filename>controller.php</filename>
+            <folder>controllers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+
+    <!-- Langues -->
+    <languages folder="site/language">
+        <language tag="fr-FR">fr-FR/fr-FR.com_ateliers.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.com_ateliers.sys.ini</language>
+    </languages>
+    <languages folder="admin/language">
+        <language tag="fr-FR">fr-FR/fr-FR.com_ateliers.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.com_ateliers.sys.ini</language>
+    </languages>
+
+    <config>
+        <fieldset name="permissions">
+            <field name="core.create" type="rules" label="Create" />
+            <field name="core.edit" type="rules" label="Edit" />
+            <field name="core.edit.state" type="rules" label="Edit State" />
+        </fieldset>
+    </config>
+
+    <!-- Menu explicite pour chaque vue -->
+    <menu>
+        <submenu>
+            <menu view="ateliers" layout="default" title="COM_ATELIERS_MENU_ATELIERS">Liste des Ateliers</menu>
+            <menu view="atelier" layout="default" title="COM_ATELIERS_MENU_ATELIER">Détail d'un Atelier</menu>
+        </submenu>
+    </menu>
+</extension>
